@@ -19,6 +19,8 @@
 		6076679F199B029000527CFE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60766787199B029000527CFE /* UIKit.framework */; };
 		607667A7199B029000527CFE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 607667A5199B029000527CFE /* InfoPlist.strings */; };
 		607667A9199B029000527CFE /* DemoOneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 607667A8199B029000527CFE /* DemoOneTests.m */; };
+		607667B8199B060D00527CFE /* DORootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 607667B6199B060D00527CFE /* DORootViewController.m */; };
+		607667B9199B060D00527CFE /* DORootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607667B7199B060D00527CFE /* DORootViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,9 @@
 		607667A4199B029000527CFE /* DemoOneTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DemoOneTests-Info.plist"; sourceTree = "<group>"; };
 		607667A6199B029000527CFE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		607667A8199B029000527CFE /* DemoOneTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoOneTests.m; sourceTree = "<group>"; };
+		607667B5199B060D00527CFE /* DORootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DORootViewController.h; sourceTree = "<group>"; };
+		607667B6199B060D00527CFE /* DORootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DORootViewController.m; sourceTree = "<group>"; };
+		607667B7199B060D00527CFE /* DORootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DORootViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +114,9 @@
 			children = (
 				60766792199B029000527CFE /* DOAppDelegate.h */,
 				60766793199B029000527CFE /* DOAppDelegate.m */,
+				607667B5199B060D00527CFE /* DORootViewController.h */,
+				607667B6199B060D00527CFE /* DORootViewController.m */,
+				607667B7199B060D00527CFE /* DORootViewController.xib */,
 				60766795199B029000527CFE /* Images.xcassets */,
 				6076678A199B029000527CFE /* Supporting Files */,
 			);
@@ -222,6 +230,7 @@
 			files = (
 				6076678E199B029000527CFE /* InfoPlist.strings in Resources */,
 				60766796199B029000527CFE /* Images.xcassets in Resources */,
+				607667B9199B060D00527CFE /* DORootViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,6 +250,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				60766790199B029000527CFE /* main.m in Sources */,
+				607667B8199B060D00527CFE /* DORootViewController.m in Sources */,
 				60766794199B029000527CFE /* DOAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

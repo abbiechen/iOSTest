@@ -7,13 +7,17 @@
 //
 
 #import "DOAppDelegate.h"
+#import "DORootViewController.h"
 
 @implementation DOAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
+    DORootViewController * doRootViewController = [[DORootViewController alloc]initWithNibName:@"DORootViewController" bundle:nil];
+    [self.window setRootViewController:doRootViewController];
+    //    UIScrollView *showScrollView = [[UIScrollView alloc]init];
+    //    [_window addSubview:showScrollView];
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
