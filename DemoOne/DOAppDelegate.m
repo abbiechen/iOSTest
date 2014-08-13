@@ -16,8 +16,8 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     DORootViewController * doRootViewController = [[DORootViewController alloc]initWithNibName:@"DORootViewController" bundle:nil];
     [self.window setRootViewController:doRootViewController];
-    //    UIScrollView *showScrollView = [[UIScrollView alloc]init];
-    //    [_window addSubview:showScrollView];
+    UIScrollView *showScrollView = [[UIScrollView alloc]init];
+    [_window addSubview:showScrollView];
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
