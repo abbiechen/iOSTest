@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6045D5B3199C5B1200804FF4 /* inventory@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6045D5B2199C5B1200804FF4 /* inventory@2x.png */; };
 		60766784199B029000527CFE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60766783199B029000527CFE /* Foundation.framework */; };
 		60766786199B029000527CFE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60766785199B029000527CFE /* CoreGraphics.framework */; };
 		60766788199B029000527CFE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60766787199B029000527CFE /* UIKit.framework */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6045D5B2199C5B1200804FF4 /* inventory@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "inventory@2x.png"; sourceTree = "<group>"; };
 		60766780199B029000527CFE /* DemoOne.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoOne.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60766783199B029000527CFE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		60766785199B029000527CFE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -126,6 +128,7 @@
 		6076678A199B029000527CFE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6045D5B2199C5B1200804FF4 /* inventory@2x.png */,
 				6076678B199B029000527CFE /* DemoOne-Info.plist */,
 				6076678C199B029000527CFE /* InfoPlist.strings */,
 				6076678F199B029000527CFE /* main.m */,
@@ -231,6 +234,7 @@
 				6076678E199B029000527CFE /* InfoPlist.strings in Resources */,
 				60766796199B029000527CFE /* Images.xcassets in Resources */,
 				607667B9199B060D00527CFE /* DORootViewController.xib in Resources */,
+				6045D5B3199C5B1200804FF4 /* inventory@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,6 +452,7 @@
 				607667AE199B029000527CFE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		607667AF199B029000527CFE /* Build configuration list for PBXNativeTarget "DemoOneTests" */ = {
 			isa = XCConfigurationList;
@@ -456,6 +461,7 @@
 				607667B1199B029000527CFE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
