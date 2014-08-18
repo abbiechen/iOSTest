@@ -7,6 +7,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DORootViewController">
             <connections>
                 <outlet property="showImageView" destination="qTE-Ab-NuS" id="XDS-xn-W5q"/>
+                <outlet property="showPageControl" destination="M48-YY-sRP" id="J1m-20-bgb"/>
                 <outlet property="showScrollView" destination="Fw0-sr-Zxq" id="fGp-1E-CCl"/>
                 <outlet property="showTextView" destination="akJ-H3-Nmm" id="Ejg-lj-kO7"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -17,12 +18,19 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <pageControl opaque="NO" contentMode="scaleToFill" highlighted="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="9" id="M48-YY-sRP">
+                    <rect key="frame" x="0.0" y="531.5" width="320" height="37"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.0" green="0.69803921570000005" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="pageIndicatorTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="currentPageIndicatorTintColor" red="1" green="1" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
+                </pageControl>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" pagingEnabled="YES" id="Fw0-sr-Zxq">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="576"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="qTE-Ab-NuS">
-                            <rect key="frame" x="20" y="38" width="280" height="232"/>
+                            <rect key="frame" x="20" y="46" width="280" height="232"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <color key="backgroundColor" red="0.0" green="0.69803921570000005" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
                         </imageView>
@@ -35,13 +43,6 @@
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
-                        <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" id="M48-YY-sRP">
-                            <rect key="frame" x="0.0" y="531" width="320" height="37"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" red="0.0" green="0.69803921570000005" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
-                            <color key="pageIndicatorTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <color key="currentPageIndicatorTintColor" red="1" green="1" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
-                        </pageControl>
                     </subviews>
                     <connections>
                         <outlet property="delegate" destination="-1" id="XHj-Il-uKH"/>

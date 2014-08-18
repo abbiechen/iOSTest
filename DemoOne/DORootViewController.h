@@ -12,4 +12,6 @@
 @property (weak, nonatomic) IBOutlet UIScrollView *showScrollView;
 @property (weak, nonatomic) IBOutlet UIImageView *showImageView;
 @property (weak, nonatomic) IBOutlet UITextView *showTextView;
+@property (weak, nonatomic) IBOutlet UIPageControl *showPageControl;
+
 @end

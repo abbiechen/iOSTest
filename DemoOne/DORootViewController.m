@@ -10,6 +10,7 @@
 #define URL @"http://www.indexbricks.com/data/get_update.php?function_code=Intro&store=livebricks&version=0&language=TW"
 
 @interface DORootViewController ()
+
 @property (strong, nonatomic) NSDictionary *responseDic;
 
 @end
@@ -28,9 +29,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.showTextView.editable = NO;
+    
     //設定scrollview的滾動範圍
-    self.showScrollView.contentSize = CGSizeMake(1000, 400);
+    self.showScrollView.contentSize = CGSizeMake(self.showScrollView.frame.size.width*9, self.showScrollView.frame.size.height);
     //分頁效果
     self.showScrollView.pagingEnabled = YES;
     //水平方向滾動
@@ -42,45 +43,72 @@
     self.responseDic = [self getResultsDic:URL];
     //因第一層為array形態，故要先創立一個array形態變數先取得第一層資料（livebricks)
     NSArray *responseArray = [self.responseDic objectForKey:@"livebricks"];
-
-    for (int i=0; i <[responseArray count] ; i++) {
-    NSDictionary *detailDic = [responseArray objectAtIndex:i];
-    self.showTextView.text = [detailDic objectForKey:@"description"];
+    
+    NSDictionary *detailDic;
+    NSData *imagedata;
+    UIImage *img ;
+    
+    for (int i = 0; i <[responseArray count]; i++) {
+        //呈現showTextView的text
+        detailDic = [responseArray objectAtIndex:i];
+        self.showTextView.text = [detailDic objectForKey:@"description"];
         
-    NSData *imagedata = [NSData dataWithContentsOfURL:[NSURL URLWithString:[detailDic objectForKey:@"image_url"]]];
-    UIImage *img = [UIImage imageWithData:imagedata];
-    self.showImageView.image = img;
+        //另建立虛擬的show2TextView
+        CGRect textViewframe;
+        textViewframe.origin.x = self.showScrollView.frame.size.width*i+20;
+        textViewframe.origin.y = 300;
+        textViewframe.size = self.showTextView.frame.size;
+        
+        UITextView *show2TextView= [[UITextView alloc]initWithFrame:textViewframe];
+        show2TextView.text = [detailDic objectForKey:@"description"];
+        [self.showScrollView addSubview:show2TextView];
+        show2TextView.editable = NO;
+        
+        
+        //因資料形態非string，故先做資料形態轉換，再呈現showImageView的image
+        imagedata=[NSData dataWithContentsOfURL:[NSURL URLWithString:[detailDic objectForKey:@"image_url"]]];
+        img = [UIImage imageWithData:imagedata];
+        self.showImageView.image = img;
+        
+        //另建立虛擬的show2ImageView
+        CGRect imageViewframe;
+        imageViewframe.origin.x = self.showScrollView.frame.size.width*i+20;
+        imageViewframe.origin.y = 46;
+        imageViewframe.size = self.showImageView.frame.size;
+        
+        UIImageView *show2ImageView = [[UIImageView alloc]initWithFrame:imageViewframe];
+        show2ImageView.image = img;
+        [self.showScrollView addSubview:show2ImageView];
     }
 }
 
 #pragma mark - UIScrollViewDelegate
 
-//- (void)scrollViewDidScrollToTop:(UIScrollView *)showScrollView
-//{
-//    NSLog(@"scrollViewDidScrollToTop");
-//}
-//
-//- (void)scrollViewDidScroll:(UIScrollView *)showScrollView
-//{
-//    
-//}
-//
-//- (void)scrollViewWillBeginDragging:(UIScrollView *)showScrollView
-//{
-//    NSLog(@"scrollViewWillBeginDragging");
-//}
-//
-//- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
-//    NSLog(@"scrollViewDidEndDragging willDecelerate");
-//}
-//
-//- (void)scrollViewWillBeginDecelerating:(UIScrollView *)showScrollView{
-//    NSLog(@"scrollViewWillBeginDecelerating");
-//}
-////tell delegate，scrollview已結束運作，減速移動
-//- (void)scrollViewDidEndDecelerating:(UIScrollView *)showScrollView{
-//    NSLog(@"scrollViewDidEndDecelerating");
-//}
+- (void)scrollViewDidScrollToTop:(UIScrollView *)showScrollView{
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)showScrollView{
+    //set pageControl method
+    //設置pagewidth的值
+    CGFloat pageWidth = 320;
+    //當user滑行view超過1/2時，判定為換頁，個案的frame(160,288,320,576)，其contenOffset.x值為160，floor值為0，
+    //＋1後，其int page值為1，表示show page 1
+    int page = floor((self.showScrollView.contentOffset.x - pageWidth/2)/pageWidth)+1;
+    self.showPageControl.currentPage = page;
+}
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)showScrollView{
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
+}
+
+- (void)scrollViewWillBeginDecelerating:(UIScrollView *)showScrollView{
+}
+
+//tell delegate，scrollview已結束運作，減速移動
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)showScrollView{
+}
 
 #pragma mark - setURL
 
