@@ -32,7 +32,6 @@
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="qTE-Ab-NuS">
                             <rect key="frame" x="20" y="46" width="280" height="232"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            <color key="backgroundColor" red="0.0" green="0.69803921570000005" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
                         </imageView>
                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="akJ-H3-Nmm">
                             <rect key="frame" x="20" y="293" width="280" height="218"/>

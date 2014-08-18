@@ -46,7 +46,11 @@
     
     NSDictionary *detailDic;
     NSData *imagedata;
-    UIImage *img ;
+    UIImage *img;
+    UIColor *textColor = [UIColor colorWithRed:0.0
+                                         green:0.7
+                                          blue:0.5
+                                         alpha:0.9];
     
     for (int i = 0; i <[responseArray count]; i++) {
         //呈現showTextView的text
@@ -63,12 +67,15 @@
         show2TextView.text = [detailDic objectForKey:@"description"];
         [self.showScrollView addSubview:show2TextView];
         show2TextView.editable = NO;
-        
+        //textView可偵測到link
+        show2TextView.dataDetectorTypes = UIDataDetectorTypeLink;
+        show2TextView.textColor = textColor;
+
         
         //因資料形態非string，故先做資料形態轉換，再呈現showImageView的image
         imagedata=[NSData dataWithContentsOfURL:[NSURL URLWithString:[detailDic objectForKey:@"image_url"]]];
         img = [UIImage imageWithData:imagedata];
-        self.showImageView.image = img;
+//      self.showImageView.image = img;
         
         //另建立虛擬的show2ImageView
         CGRect imageViewframe;
@@ -79,6 +86,8 @@
         UIImageView *show2ImageView = [[UIImageView alloc]initWithFrame:imageViewframe];
         show2ImageView.image = img;
         [self.showScrollView addSubview:show2ImageView];
+        //imageView等比例縮放
+        show2ImageView.ContentMode = UIViewContentModeScaleAspectFit;
     }
 }
 
@@ -125,6 +134,7 @@
 //最後回傳dic
    return jsonDic;
 }
+
 
 - (void)didReceiveMemoryWarning
 {
