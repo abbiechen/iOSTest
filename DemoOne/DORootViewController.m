@@ -30,8 +30,6 @@
 {
     [super viewDidLoad];
     
-    //設定scrollview的滾動範圍
-    self.showScrollView.contentSize = CGSizeMake(self.showScrollView.frame.size.width*9, self.showScrollView.frame.size.height);
     //分頁效果
     self.showScrollView.pagingEnabled = YES;
     //水平方向滾動
@@ -43,6 +41,9 @@
     self.responseDic = [self getResultsDic:URL];
     //因第一層為array形態，故要先創立一個array形態變數先取得第一層資料（livebricks)
     NSArray *responseArray = [self.responseDic objectForKey:@"livebricks"];
+    //設定scrollview的滾動範圍
+    self.showScrollView.contentSize = CGSizeMake(self.showScrollView.frame.size.width*[responseArray count], self.showScrollView.frame.size.height);
+
     
     NSDictionary *detailDic;
     NSData *imagedata;
@@ -135,6 +136,9 @@
    return jsonDic;
 }
 
+-(void)imageViewClicked:(UITapGestureRecognizer*)gestRecognizer{
+    
+}
 
 - (void)didReceiveMemoryWarning
 {
